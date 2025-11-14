@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int sumEven(int *n)
+{
+    if (*n == 0)
+        return 0;
+
+    int current = *n;
+    (*n) -= 2;
+
+    return current + sumEven(n);
+}
+
+int main()
+{
+    int num = 10;
+    int *ptr = &num;
+
+    int result = sumEven(ptr);
+
+    printf("Sum of even numbers (1 to 10) = %d\n", result);
+
+    return 0;
+}
+
